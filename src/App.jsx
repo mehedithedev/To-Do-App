@@ -22,17 +22,17 @@ class App extends Component {
   render() {
     return (
       <div>
-        <CardList>
-         
-        {this.state.monsters.map((monster) => (
-          <h1>{monster.name}</h1>
-        ))}
-
-
-        </CardList>
-
-        
-      
+      <input
+        type="search"
+        placeholder="search monsters"
+        onChange={
+          e=>this.setState({
+            searchField: e.target.value
+          }
+          )
+        }
+      />
+        <CardList monsters={this.state.monsters}/>    
       </div>
     );
   }
